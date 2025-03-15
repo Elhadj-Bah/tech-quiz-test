@@ -1,35 +1,30 @@
-import React from 'react';
-import  Quiz from '../../src/components/Quiz'; 
+import Quiz from "../../client/src/components/Quiz";
 
-describe('<Quiz />', () => {
-    it('should render the Quiz component', () => {
-        cy.mount(<Quiz />);
-        beforeEach(() => {
-            cy.intercept ('GET', '/api/questions/random', {
-                body: [
+describe("<Quiz />", () => {
+  beforeEach(() => {
+    cy.intercept(
+      {
+        method: "GET",
+        url: "/api/questions/random",
+      },
+      {
+        fixture: "questions.json",
+        statusCode: 200,
+      }
+    ).as("getRandomQuestion");
+  });
 
-                    {
-                        "question": "How do you start a comment in Python?",
-                        "answers": [
-                          { "text": "//", "isCorrect": false },
-                          { "text": "/*", "isCorrect": false },
-                          { "text": "#", "isCorrect": true },
-                          { "text": "<!--", "isCorrect": false }
-                        ]
-                       }
-                ]
-       
-    }).as ('getQuestion');
-    cy.get('button').contains ('Start Quiz');
-    cy.get('button').click();
-    cy.wait('@getQuestion');
-        })
-    }
-    )
-    it('get the question', () => {
-        cy.get('button').click();
-        cy.request('http://localhost:3001/quiz').then((response) => {
-            expect(response.status).to.eq(200);
-            expect(response.body).to.have.property('question');
-        } ) 
+  it("get the question", () => {
+    cy.mount(<Quiz />);
+    cy.get("button").contains("Start Quiz").click();
+    cy.get(".card").should("be.visible");
+  });
+
+  /*
+  it("should render the End Quiz Button", () => {
+    cy.mount(<Quiz />);
+    cy.get("button").contains("Start Quiz").click();
+    // add test to grab other HTML
+  });
+  */
 });

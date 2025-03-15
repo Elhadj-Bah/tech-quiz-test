@@ -1,5 +1,11 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+[
+  {
+    "question": "which is the correct answer",
+    "answers": [
+      { "text": "Correct", "isCorrect": true },
+      { "text": "Almost", "isCorrect": false },
+      { "text": "Not Quite", "isCorrect": true },
+      { "text": "Not Close", "isCorrect": false }
+    ]
+  }
+]
