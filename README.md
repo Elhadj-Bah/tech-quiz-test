@@ -40,6 +40,6 @@ This application is covered under the MIT license
 ![screeshots](client/src/assets/images/Screenshot%202025-03-15%20at%2012.57.50 PM.png)
 ![screeshots](client/src/assets/images/Screenshot%202025-03-16%20at%2011.38.56 PM.png)
 
-## Walkthrough video demo link: https://www.icloud.com/iclouddrive/066M9cTIbr8eDs_zcw3L7meQw#Screen_Recording_2025-03-16_at_11.42
+## Walkthrough video demo link: https://drive.google.com/file/d/1PRJdQaEofRhVe-Jmlxl7lsGQpUpypg49/view?usp=sharing
 
 ## Questions
